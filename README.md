@@ -16,8 +16,10 @@ sudo ldconfig
 ```
 # 使用自己的 .world 文件不能运行
 修改如下，在自己的 .world 文件加上这句话：
-
+``` xml
   <plugin name='ros_interface_plugin' filename='librotors_gazebo_ros_interface_plugin.so'/>
+```
+
   
 # FAEL
 

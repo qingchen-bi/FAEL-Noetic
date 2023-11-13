@@ -1,3 +1,22 @@
+# protobuf 报错问题解决办法
+装这个功能包（其实是 rotors-fly）的时候，发现会报 protobuf 版本太老或者太新，导致编译不通过问题。
+所以需要卸载已有的 protobuf , 安装对应的版本，即 protobuf-3.6.X
+查看版本、卸载与重新安装：
+``` bash
+protoc --version 
+cd /usr/local/include/google
+sudo rm -rf protobuf
+cd ~/Downloads/protobuf-3.6.x
+./autogen.sh
+./configure
+make
+make check
+sudo make install
+sudo ldconfig
+```
+# 使用自己的 .world 文件不能运行，修改如下：
+在自己的 .world 文件加上这句话：
+<plugin name='ros_interface_plugin' filename='librotors_gazebo_ros_interface_plugin.so'/>
 # FAEL
 
 **FAEL** is a systematic framework for **F**ast **A**utonomous **E**xploration for **L**arge-scale environment. In **FAEL**, a fast preprocessing of environmental information is presented, providing fundamental information to support high-frequency path planning. An path optimization formulation that comprehensively considers key factors about fast exploration is introduced. Further, an heuristic algorithm is devised to solve the NP-hard optimization problem, which empirically finds optimal solution in real time. Our method is demonstrated to completes exploration with the least time and shortest movement distance compared to state-of-the-art methods at the time of publication.

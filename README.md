@@ -1,6 +1,6 @@
 # protobuf 报错问题解决办法
 装这个功能包（其实是 rotors-fly）的时候，发现会报 protobuf 版本太老或者太新，导致编译不通过问题。
-所以需要卸载已有的 protobuf , 安装对应的版本，即 protobuf-3.6.X
+所以需要卸载已有的 protobuf , 安装对应的版本，即 protobuf-3.6.X，其中
 查看版本、卸载与重新安装：
 ``` bash
 protoc --version 
